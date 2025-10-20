@@ -1,0 +1,34 @@
+Gestor de Tareas con OOP y Prototipos:
+
+En el gestor de tareas se aplicaron los principios de la Programación Orientada a Objetos utilizando funciones constructoras y prototipos, el sistema original de objetos en JavaScript antes de class.
+
+Se definió una función constructora Tarea que actúa como molde para crear objetos con propiedades como título, descripción, estado y dificultad.
+Ejemplo:
+
+function Tarea(titulo, descripcion, estado, dificultad) {
+  this.titulo = titulo;
+  this.descripcion = descripcion;
+  this.estado = estado;
+  this.dificultad = dificultad;
+}
+
+Se aplicó encapsulamiento, agrupando los datos y métodos dentro de una misma entidad.
+Los métodos se agregaron al prototipo para que todas las instancias compartan la misma funcionalidad, aprovechando la herencia prototípica sin duplicar código.
+Ejemplo:
+
+Tarea.prototype.obtenerEstado = function() {
+  const estados = ["Pendiente", "En curso", "Terminada", "Cancelada"];
+  return estados[this.estado];
+};
+
+Cada objeto creado con new Tarea() tiene sus propios datos pero hereda los métodos desde Tarea.prototype.
+Esta es la herencia implícita del modelo prototípico de JavaScript, distinta de la herencia entre diferentes tipos de objetos, que no fue necesaria en este caso.
+
+También se utilizó abstracción, representando solo la información relevante de una tarea y simplificando el manejo de datos.
+Ejemplo:
+
+const tarea1 = new Tarea("Aprender JS", "Repasar funciones", 1, 3);
+console.log(tarea1.obtenerEstado()); // "En curso"
+
+No se implementó herencia entre distintos tipos de objetos ni polimorfismo, ya que el sistema se centra en un único modelo (Tarea).
+
