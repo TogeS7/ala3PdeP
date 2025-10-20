@@ -28,4 +28,4 @@ Reutilización directa: es fácil clonar o extender comportamientos sin necesida
 
 Menor complejidad inicial: resulta más intuitivo para quienes vienen de entornos dinámicos o de scripting.
 
-Compatibilidad con múltiples paradigmas: JavaScript permite
+Compatibilidad con múltiples paradigmas: JavaScript permite mezclar orientación a objetos, programación funcional y estructurada en un mismo entorno.
