@@ -1,0 +1,44 @@
+Calculadora con OOP - Explicación con ejemplos
+
+En la versión orientada a objetos de la calculadora se implementó una clase Calculadora que agrupa los datos y las operaciones del programa, organizando el código de forma más clara y modular.
+Ejemplo:
+
+class Calculadora {
+  private num1: number;
+  private num2: number;
+  private operador: string;
+  
+Se aplicó el encapsulamiento, ya que los atributos (num1, num2, operador) se manejan solo a través de métodos internos como ingresarDatos() y calcular(), evitando modificaciones externas y protegiendo el estado del objeto.
+Ejemplo:
+
+public ingresarDatos(): void {
+  this.num1 = parseFloat(prompt("Ingrese el primer número:") || "0");
+  this.operador = prompt("Ingrese el operador (+, -, *, /):") || "";
+  this.num2 = parseFloat(prompt("Ingrese el segundo número:") || "0");
+}
+
+Cada acción del programa se representa mediante un método, lo que facilita el mantenimiento y la comprensión del flujo.
+Ejemplo:
+
+public calcular(): number | string {
+  switch (this.operador) {
+    case "+": return this.num1 + this.num2;
+    case "-": return this.num1 - this.num2;
+    case "*": return this.num1 * this.num2;
+    case "/": return this.num2 !== 0 ? this.num1 / this.num2 : "Error: división por cero";
+    default: return "Operador no válido";
+  }
+}
+
+Además, al crear una instancia con new Calculadora(), el programa ejemplifica cómo un objeto contiene su propio conjunto de datos y comportamientos.
+Ejemplo:
+
+const calc = new Calculadora();
+calc.ingresarDatos();
+const resultado = calc.calcular();
+calc.mostrarResultado(resultado);
+
+También se emplea abstracción, ocultando los detalles internos de las operaciones y ofreciendo una interfaz sencilla al usuario.
+Gracias a estas características, el código resulta más ordenado, reutilizable y fácil de extender que la versión estructurada original.
+
+
